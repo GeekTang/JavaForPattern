@@ -1,4 +1,4 @@
-package com.fd.application.wsmt;
+package com.fd.application.wsmt.task;
 
 public class TimeCost {
 	

@@ -1,4 +1,6 @@
-package com.fd.application.wsmt;
+package com.fd.application.wsmt.gui;
+
+import com.fd.application.wsmt.task.UpdateValue;
 
 public interface DynamicalLabel extends Runnable {
 	

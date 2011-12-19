@@ -1,4 +1,4 @@
-package com.fd.application.wsmt;
+package com.fd.application.wsmt.gui;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,11 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Label;
+
+import com.fd.application.wsmt.task.TaskImp;
+import com.fd.application.wsmt.task.TaskInformation;
+import com.fd.application.wsmt.task.TimeCostFormatImp;
+import com.fd.application.wsmt.task.UpdateValue;
 
 public class TimeManageWin extends ApplicationWindow{
 	
@@ -95,7 +100,7 @@ public class TimeManageWin extends ApplicationWindow{
 		timeSpendValue.setBounds(256, 49, 91, 25);
 		
 		DynamicalLabel dynamicalLabel = new LabelUpdatingTask(timeSpendValue, 1);
-		Display.getCurrent().syncExec(dynamicalLabel);
+		//Display.getCurrent().syncExec(dynamicalLabel);
 		taskChangeListener.setDynamicalLable(dynamicalLabel);
 		taskChangeListener.setValues(values);
 		

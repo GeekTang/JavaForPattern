@@ -1,6 +1,8 @@
-package com.fd.application.wsmt;
+package com.fd.application.wsmt.gui;
 
 import org.eclipse.swt.widgets.Label;
+
+import com.fd.application.wsmt.task.UpdateValue;
 
 public class LabelUpdatingTask implements DynamicalLabel {
 
@@ -29,7 +31,11 @@ public class LabelUpdatingTask implements DynamicalLabel {
 	private void refresh()
 	{
 		if (theValue != null) {
-			theLabel.setText(theValue.getValue());
+			theLabel.getDisplay().syncExec (new Runnable () {  
+                 public void run () {  
+                	 theLabel.setText(theValue.getValue());
+                 }  
+             });  
 		}
 	}
 	
