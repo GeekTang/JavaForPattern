@@ -1,1 +1,3 @@
-java -Djava.library.path=lib -jar MyTime-1.0-SNAPSHOT.jar
+mvn install
+cd target
+java -Djava.library.path=classes -jar MyTime-1.0-SNAPSHOT.jar
