@@ -42,7 +42,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>com.fd.application.wsmt.gui.TimeManageWin</mainClass>
+							<mainClass>com.fd.application.wsmt.main.Runner</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

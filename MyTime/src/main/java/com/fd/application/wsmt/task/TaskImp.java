@@ -2,6 +2,8 @@ package com.fd.application.wsmt.task;
 
 import java.util.Date;
 
+import com.fd.application.wsmt.persistence.Data;
+
 public class TaskImp implements TaskInformation, Task, UpdateValue{
 	
 	private TimeCost timecost;
@@ -10,11 +12,14 @@ public class TaskImp implements TaskInformation, Task, UpdateValue{
 	
 	private Date startTime;
 	
-	public TaskImp(String name, TimeCostFormat timeFormat)
+	private Data myData;
+	
+	public TaskImp(String name, TimeCostFormat timeFormat, int lasttimecost, Data data)
 	{
 		taskName = name;
 		timecost = new TimeCost(timeFormat);
-		timecost.setTimeCost(0);
+		timecost.setTimeCost(lasttimecost*1000);
+		myData = data;
 	}
 
 	public void start() {
@@ -27,7 +32,10 @@ public class TaskImp implements TaskInformation, Task, UpdateValue{
 		
 		Date currentDate = new Date();
 		timecost.setTimeCost(timecost.getTimeCost() + currentDate.getTime() - startTime.getTime());
-		
+		if(myData != null)
+		{
+			myData.record(taskName, String.valueOf((int)(timecost.getTimeCost()/1000)));
+		}
 	}
 
 	public String getTaskName() {

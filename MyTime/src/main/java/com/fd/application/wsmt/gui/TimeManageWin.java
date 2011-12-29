@@ -146,34 +146,6 @@ public class TimeManageWin extends ApplicationWindow{
 		return statusLineManager;
 	}
 
-	/**
-	 * Launch the application.
-	 * @param args
-	 */
-	public static void main(String args[]) {
-		try {
-			TimeManageWin window = new TimeManageWin();
-			List theTasks = new ArrayList<TaskImp>();
-			
-			TimeCostFormatImp timeformat = new TimeCostFormatImp();
-			TaskImp coding = new TaskImp("Coding", timeformat);
-			theTasks.add(coding);
-			
-			TaskImp reading = new TaskImp("Reading", timeformat);
-			theTasks.add(reading);
-			
-			window.setTasks(theTasks);
-			window.setValues(theTasks);
-			TaskChangeListener theTaskChangeListener = new TaskChangeListenerImp();
-			theTaskChangeListener.setTasks(theTasks);
-			window.setTaskChangeListener(theTaskChangeListener );
-			window.setBlockOnOpen(true);
-			window.open();
-			Display.getCurrent().dispose();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 	/**
 	 * Configure the shell.

@@ -1,0 +1,3 @@
+Coding=5
+Meeting=120
+Fun=0
