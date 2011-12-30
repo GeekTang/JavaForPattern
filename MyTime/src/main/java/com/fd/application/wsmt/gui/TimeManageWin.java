@@ -1,24 +1,27 @@
 package com.fd.application.wsmt.gui;
 
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.StatusLineManager;
 import org.eclipse.jface.action.ToolBarManager;
 import org.eclipse.jface.window.ApplicationWindow;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.graphics.ImageData;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Label;
 
-import com.fd.application.wsmt.task.TaskImp;
 import com.fd.application.wsmt.task.TaskInformation;
-import com.fd.application.wsmt.task.TimeCostFormatImp;
 import com.fd.application.wsmt.task.UpdateValue;
 
 public class TimeManageWin extends ApplicationWindow{
@@ -71,6 +74,12 @@ public class TimeManageWin extends ApplicationWindow{
 	@Override
 	protected Control createContents(Composite parent) {
 		Composite container = new Composite(parent, SWT.NONE);
+		ImageData imageData = null;
+
+	    imageData = new ImageData(this.getClass().getResourceAsStream("bg.jpg"));
+
+	    Image image = new Image(container.getDisplay(), imageData);
+		container.setBackgroundImage(image);
 		
 		//Tasks selection area
 		Combo combo = new Combo(container, SWT.NONE);
@@ -100,7 +109,6 @@ public class TimeManageWin extends ApplicationWindow{
 		timeSpendValue.setBounds(256, 49, 91, 25);
 		
 		DynamicalLabel dynamicalLabel = new LabelUpdatingTask(timeSpendValue, 1);
-		//Display.getCurrent().syncExec(dynamicalLabel);
 		taskChangeListener.setDynamicalLable(dynamicalLabel);
 		taskChangeListener.setValues(values);
 		
