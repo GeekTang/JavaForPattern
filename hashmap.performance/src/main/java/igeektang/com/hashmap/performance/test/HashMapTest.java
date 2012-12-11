@@ -91,7 +91,7 @@ public class HashMapTest {
         if (threadNumber > MAX_THREAD_NUMBER) {
             throw new InvalideParameters("Thread number should not larger then " + MAX_THREAD_NUMBER);
         }
-        if (WriteModel.UPDATE.equals(writeModel)) {
+        if (WriteModel.UPDATE.equals(writeModel) || WriteModel.REMOVE.equals(writeModel)) {
             init(DEFAULT_INITIAL_CAPACITY, contentSize);
         } else {
             init(DEFAULT_INITIAL_CAPACITY, 0);

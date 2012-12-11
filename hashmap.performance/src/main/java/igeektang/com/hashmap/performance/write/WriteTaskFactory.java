@@ -37,6 +37,8 @@ public class WriteTaskFactory implements TaskFactory {
             return new WriteNewTask(mapInstance, synchroniz, times);
         case UPDATE:
             return new UpdateTask(mapInstance, synchroniz, times);
+        case REMOVE:
+            return new RemoveTask(mapInstance, synchroniz, times);
         default:
             return null;
         }

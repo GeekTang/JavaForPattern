@@ -8,5 +8,5 @@ package igeektang.com.hashmap.performance.write;
  *
  */
 public enum WriteModel {
-    ADD, UPDATE
+    ADD, UPDATE, REMOVE
 }
