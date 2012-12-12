@@ -37,12 +37,12 @@ public class TestMain {
             test.readLoadTest(16, 100000, 32, 10000000);
             
             System.out.println("Test the access thread number's impact for wite (remove) performance.");
-            test.writeLoadTest(100000, 1, 100000, WriteModel.REMOVE);
-            test.writeLoadTest(100000, 2, 100000, WriteModel.REMOVE);
-            test.writeLoadTest(100000, 4, 100000, WriteModel.REMOVE);
-            test.writeLoadTest(100000, 8, 100000, WriteModel.REMOVE);
-            test.writeLoadTest(100000, 16, 100000, WriteModel.REMOVE);
-            test.writeLoadTest(100000, 32, 100000, WriteModel.REMOVE);
+            test.writeLoadTest(1000000, 1, 100000, WriteModel.REMOVE);
+            test.writeLoadTest(1000000, 2, 100000, WriteModel.REMOVE);
+            test.writeLoadTest(1000000, 4, 100000, WriteModel.REMOVE);
+            test.writeLoadTest(1000000, 8, 100000, WriteModel.REMOVE);
+            test.writeLoadTest(1000000, 16, 100000, WriteModel.REMOVE);
+            test.writeLoadTest(1000000, 32, 100000, WriteModel.REMOVE);
             
             System.out.println("Test the Hash Map Size's impact for wite (update) performance.");
             test.writeLoadTest(1, 1, 100000, WriteModel.UPDATE);

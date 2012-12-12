@@ -18,7 +18,7 @@ public class RemoveTask extends TimeCostStatisticTask {
 
 	private final Map<Object, Object> map;
 
-	private static final int REMOVE_KEY_SIZE = 10000;
+	private static final int REMOVE_KEY_SIZE = 100000;
 
 	private static List<Object> readKeyList;
 
@@ -50,7 +50,7 @@ public class RemoveTask extends TimeCostStatisticTask {
 				int i = 0;
 				while (i < REMOVE_KEY_SIZE) {
 					readKeyList
-							.add(keyList.get((int) (keyList.size() * i / REMOVE_KEY_SIZE)));
+							.add(keyList.get((int) (keyList.size() / REMOVE_KEY_SIZE)*i));
 					i++;
 				}
 			}
